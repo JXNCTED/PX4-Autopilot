@@ -80,7 +80,7 @@ void LoggedTopics::add_default_topics()
 	add_optional_topic("gripper");
 	add_optional_topic("heater_status");
 	add_topic("home_position");
-	add_topic("hover_thrust_estimate", 100);
+	add_topic("hover_thrust_estimate", 4);
 	add_topic("input_rc", 500);
 	add_optional_topic("internal_combustion_engine_control", 10);
 	add_optional_topic("internal_combustion_engine_status", 10);
@@ -132,7 +132,7 @@ void LoggedTopics::add_default_topics()
 	add_topic("transponder_report");
 	add_topic("vehicle_acceleration", 50);
 	add_topic("vehicle_air_data", 200);
-	add_topic("vehicle_angular_velocity", 20);
+	add_topic("vehicle_angular_velocity", 4);
 	add_topic("vehicle_attitude", 50);
 	add_topic("vehicle_attitude_setpoint", 50);
 	add_topic("vehicle_command");
@@ -142,8 +142,8 @@ void LoggedTopics::add_default_topics()
 	add_topic("vehicle_global_position", 200);
 	add_topic("vehicle_gps_position", 100);
 	add_topic("vehicle_land_detected");
-	add_topic("vehicle_local_position", 100);
-	add_topic("vehicle_local_position_setpoint", 100);
+	add_topic("vehicle_local_position", 4);
+	add_topic("vehicle_local_position_setpoint", 4);
 	add_topic("vehicle_magnetometer", 200);
 	add_topic("vehicle_rates_setpoint", 20);
 	add_topic("vehicle_roi", 1000);
@@ -184,7 +184,7 @@ void LoggedTopics::add_default_topics()
 	add_optional_topic_multi("yaw_estimator_status", 1000);
 
 	// log all raw sensors at minimal rate (at least 1 Hz)
-	add_topic_multi("battery_status", 200, 2);
+	add_topic_multi("battery_status", 10, 2);
 	add_topic_multi("differential_pressure", 1000, 2);
 	add_topic_multi("distance_sensor", 1000, 2);
 	add_optional_topic_multi("sensor_accel", 1000, 4);
@@ -204,10 +204,10 @@ void LoggedTopics::add_default_topics()
 	add_optional_topic("pps_capture");
 
 	// additional control allocation logging
-	add_topic("actuator_motors", 100);
-	add_topic("actuator_servos", 100);
-	add_topic_multi("vehicle_thrust_setpoint", 20, 2);
-	add_topic_multi("vehicle_torque_setpoint", 20, 2);
+	add_topic("actuator_motors", 4);
+	add_topic("actuator_servos", 4);
+	add_topic_multi("vehicle_thrust_setpoint", 4, 2);
+	add_topic_multi("vehicle_torque_setpoint", 4, 2);
 
 	// SYS_HITL: default ground truth logging for simulation
 	int32_t sys_hitl = 0;
